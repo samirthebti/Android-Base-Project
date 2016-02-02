@@ -159,7 +159,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     provided 'org.projectlombok:lombok:1.16.6'
     testCompile 'junit:junit:4.12'
-    testCompile 'org.robolectric:robolectric:3.0'
+    testCompile 'org.robolectric:robolectric:3.1-SNAPSHOT'
 }
 
 // Uncomment when having the google-services.json files

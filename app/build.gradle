@@ -111,8 +111,18 @@ android {
 }
 
 dependencies {
-    androidTestCompile 'com.jayway.android.robotium:robotium-solo:5.5.4'
-    androidTestCompile 'org.mockito:mockito-core:2.0.43-beta'
+    androidTestCompile('com.android.support.test:runner:0.4.1') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.1') {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude module: 'recyclerview-v7'
+    }
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.1') {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
     apt 'com.f2prateek.dart:dart-processor:2.0.0-RC1'
     //apt 'com.f2prateek.dart:henson-processor:2.0.0-RC1' // Loaded from JitPack
     apt 'com.google.dagger:dagger-compiler:2.0.2'
@@ -159,7 +169,9 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     provided 'org.projectlombok:lombok:1.16.6'
     testCompile 'junit:junit:4.12'
-    testCompile 'org.robolectric:robolectric:3.1-SNAPSHOT'
+    testCompile 'org.robolectric:robolectric:3.0'
+    testCompile 'org.robolectric:shadows-multidex:3.0'
+    testCompile 'org.robolectric:shadows-play-services:3.0'
 }
 
 // Uncomment when having the google-services.json files

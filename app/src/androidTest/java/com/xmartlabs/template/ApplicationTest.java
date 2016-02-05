@@ -1,10 +1,12 @@
 package com.xmartlabs.template;
 
-import android.app.Application;
 import android.test.ApplicationTestCase;
 
-public class ApplicationTest extends ApplicationTestCase<Application> {
+/**
+ * Created by santiago on 04/02/16.
+ */
+public class ApplicationTest extends ApplicationTestCase<BaseProjectApplication> {
   public ApplicationTest() {
-    super(Application.class);
+    super(BaseProjectApplication.class);
   }
 }

@@ -92,9 +92,6 @@ android {
         staging {
             applicationIdSuffix '.staging'
         }
-        demo {
-            applicationIdSuffix '.demo'
-        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8

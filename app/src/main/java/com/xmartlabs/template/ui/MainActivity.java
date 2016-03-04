@@ -133,7 +133,6 @@ public class MainActivity extends BaseAppCompatActivity {
       if (!drawerAdapter.isSelected(drawerItem)) {
         FragmentWithDrawer fragmentWithDrawer = null;
         switch (drawerItem) {
-          // TODO: change fragments according to selected drawer item
           case HOME: {
             fragmentWithDrawer = new HomeFragmentBuilder().build();
             break;

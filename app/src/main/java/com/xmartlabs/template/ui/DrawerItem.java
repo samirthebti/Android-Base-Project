@@ -16,7 +16,6 @@ import lombok.Getter;
  * Created by santiago on 21/10/15.
  */
 public enum DrawerItem {
-  // TODO: define here the items for the drawer menu. Use next definitions as examples.
   HOME(BaseProjectApplication.getContext().getString(R.string.home), R.drawable.ic_action_action_home, DrawerItemType.ABOVE),
   REPOS(BaseProjectApplication.getContext().getString(R.string.repo_list_title), R.drawable.ic_action_action_polymer, DrawerItemType.ABOVE),
   __DIVIDED__(null, null, DrawerItemType.DIVIDER),
@@ -57,6 +56,7 @@ public enum DrawerItem {
     return Stream.of(values())
         .filter(drawerItem -> Objects.equals(drawerItem.getValue(), value))
         .findFirst()
-        .orElseThrow(() -> new IllegalArgumentException(String.format(Locale.getDefault(), "Invalid drawer item value: %d", value)));
+        .orElseThrow(() -> new IllegalArgumentException(String.format(Locale.getDefault(),
+            "Invalid drawer item value: %d", value)));
   }
 }

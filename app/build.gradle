@@ -18,7 +18,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'com.github.ben-manes.versions'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.jakewharton.hugo'
-//apply plugin: 'io.fabric' // TODO: uncomment when having set the Fabric API key
+//apply plugin: 'io.fabric' // Not really using it
 apply plugin: 'me.tatarka.retrolambda'
 
 repositories {
@@ -92,6 +92,9 @@ android {
         staging {
             applicationIdSuffix '.staging'
         }
+        demo {
+            applicationIdSuffix '.demo'
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -133,6 +136,7 @@ dependencies {
     compile 'com.f2prateek.dart:henson:2.0.0'
     compile 'com.github.mrmike:Ok2Curl:0.2.2'
     compile 'com.github.square.picasso:picasso:8c16e8564e'
+    compile 'com.github.xmartlabs.bullet:bullet:33b6c17e9e'
     compile 'com.google.android.gms:play-services-gcm:8.4.0'
     compile 'com.google.dagger:dagger:2.0.2'
     compile 'com.hannesdorfmann.fragmentargs:annotation:3.0.2'

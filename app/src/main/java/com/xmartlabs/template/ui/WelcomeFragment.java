@@ -8,6 +8,7 @@ import com.trello.rxlifecycle.RxLifecycle;
 import com.xmartlabs.template.R;
 import com.xmartlabs.template.controller.AuthController;
 import com.xmartlabs.template.model.AuthResponse;
+import com.xmartlabs.template.model.LoginRequest;
 
 import javax.inject.Inject;
 
@@ -29,7 +30,7 @@ public class WelcomeFragment extends BaseFragment {
   @OnClick(R.id.log_in_button)
   @SuppressWarnings("unused")
   void logIn() {
-    authController.login()
+    authController.login(LoginRequest.builder().build())
         .toObservable()
         .compose(RxLifecycle.bindUntilEvent(lifecycle(), FragmentEvent.DESTROY_VIEW))
         .toSingle()

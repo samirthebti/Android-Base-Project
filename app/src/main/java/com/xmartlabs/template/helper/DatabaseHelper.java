@@ -24,7 +24,8 @@ public class DatabaseHelper {
   }
 
   public void migrate(@NonNull Session session) {
-    if (session.getDatabaseVersion() == null || session.getDatabaseVersion() != Session.CURRENT_DATABASE_VERSION) { // Drop even if downgrading the version.
+    // Drop even if downgrading the version.
+    if (session.getDatabaseVersion() == null || session.getDatabaseVersion() != Session.CURRENT_DATABASE_VERSION) {
       deleteAll();
       session.setDatabaseVersion(Session.CURRENT_DATABASE_VERSION);
       sessionController.setSession(session);

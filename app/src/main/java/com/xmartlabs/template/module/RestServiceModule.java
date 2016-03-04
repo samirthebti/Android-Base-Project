@@ -53,7 +53,6 @@ public class RestServiceModule {
     return retrofit.create(AuthService.class);
   }
 
-  // TODO: Just for demo, delete this method in the real project
   @Provides
   @Singleton
   public RepoService provideRepoService(Retrofit retrofit) {

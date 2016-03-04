@@ -31,7 +31,7 @@ public class SessionInterceptor implements Interceptor {
       return chain.proceed(chain.request());
     } else {
       val newRequest = chain.request().newBuilder()
-          //.addHeader("session", sessionInfo) // TODO: Add auth token here if needed
+          .addHeader("SAMPLE_HEADER", "XL")
           .build();
 
       return chain.proceed(newRequest);

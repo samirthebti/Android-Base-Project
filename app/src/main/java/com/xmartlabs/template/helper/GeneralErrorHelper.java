@@ -1,12 +1,14 @@
 package com.xmartlabs.template.helper;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.annimon.stream.Objects;
 import com.crashlytics.android.Crashlytics;
 import com.xmartlabs.template.BaseProjectApplication;
 import com.xmartlabs.template.controller.SessionController;
+import com.xmartlabs.template.ui.Henson;
 
 import java.io.IOException;
 
@@ -66,7 +68,10 @@ public class GeneralErrorHelper {
 
   private void logOut() {
     finishLogOut();
-    // TODO: take the user to an activity
+
+    Intent intent = Henson.with(applicationContext).gotoWelcomeActivity().build();
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+    applicationContext.startActivity(intent);
   }
 
   /**
@@ -80,6 +85,6 @@ public class GeneralErrorHelper {
   }
 
   public void dismissNotifications() {
-    // TODO
+
   }
 }

@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.xmartlabs.template.BaseProjectApplication;
 import com.xmartlabs.template.model.AuthResponse;
+import com.xmartlabs.template.model.LoginRequest;
 import com.xmartlabs.template.model.Session;
 import com.xmartlabs.template.service.AuthService;
 
@@ -24,17 +25,15 @@ public class AuthController extends ServiceController {
     BaseProjectApplication.getContext().inject(this);
   }
 
-  public Single<AuthResponse> login() {
-    // TODO
-    //authService.login();
-    return Single.just(new AuthResponse())
+  public Single<AuthResponse> login(@NonNull LoginRequest loginRequest) {
+    return authService.login(loginRequest)
         .doOnSuccess(authResponse -> {
           Session session = sessionController.setSession(authResponse);
           setLoginInfo(session);
         });
   }
 
-  public void setLoginInfo(@NonNull Session session) {
-    // TODO
+  public void setLoginInfo(@SuppressWarnings("UnusedParameters") @NonNull Session session) {
+
   }
 }

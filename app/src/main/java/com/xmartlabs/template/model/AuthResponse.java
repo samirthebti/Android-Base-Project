@@ -14,5 +14,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Parcel
 public class AuthResponse {
-  // TODO
+
 }

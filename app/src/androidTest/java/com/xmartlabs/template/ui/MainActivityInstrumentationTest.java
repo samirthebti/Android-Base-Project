@@ -2,6 +2,7 @@ package com.xmartlabs.template.ui;
 
 import android.support.test.espresso.matcher.BoundedMatcher;
 import android.support.test.rule.ActivityTestRule;
+import android.support.test.runner.AndroidJUnit4;
 import android.support.v7.widget.Toolbar;
 
 import com.xmartlabs.template.R;
@@ -10,6 +11,7 @@ import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
@@ -19,6 +21,8 @@ import static org.hamcrest.CoreMatchers.containsString;
 /**
  * Created by santiago on 03/02/16.
  */
+@SuppressWarnings("DefaultFileTemplate")
+@RunWith(AndroidJUnit4.class)
 public class MainActivityInstrumentationTest {
   @Rule
   public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<>(MainActivity.class);

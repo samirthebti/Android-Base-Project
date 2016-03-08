@@ -21,10 +21,6 @@ public class AuthController extends ServiceController {
   @Inject
   SessionController sessionController;
 
-  public AuthController() {
-    BaseProjectApplication.getContext().inject(this);
-  }
-
   public Single<AuthResponse> login(@NonNull LoginRequest loginRequest) {
     return authService.login(loginRequest)
         .doOnSuccess(authResponse -> {

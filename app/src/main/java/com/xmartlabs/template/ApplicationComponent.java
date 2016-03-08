@@ -1,6 +1,8 @@
 package com.xmartlabs.template;
 
 import com.xmartlabs.template.controller.AuthController;
+import com.xmartlabs.template.controller.Controller;
+import com.xmartlabs.template.controller.ServiceController;
 import com.xmartlabs.template.controller.SessionController;
 import com.xmartlabs.template.helper.DatabaseHelper;
 import com.xmartlabs.template.helper.GeneralErrorHelper;
@@ -14,11 +16,17 @@ import com.xmartlabs.template.module.PicassoModule;
 import com.xmartlabs.template.module.ReceiverModule;
 import com.xmartlabs.template.module.RestServiceModule;
 import com.xmartlabs.template.module.SessionInterceptor;
+import com.xmartlabs.template.ui.BaseActivity;
+import com.xmartlabs.template.ui.BaseAppCompatActivity;
+import com.xmartlabs.template.ui.BaseFragment;
+import com.xmartlabs.template.ui.FragmentWithDrawer;
 import com.xmartlabs.template.ui.HomeFragment;
 import com.xmartlabs.template.ui.MainActivity;
 import com.xmartlabs.template.ui.SettingsActivity;
 import com.xmartlabs.template.ui.SettingsFragment;
+import com.xmartlabs.template.ui.SingleFragmentActivity;
 import com.xmartlabs.template.ui.StartActivity;
+import com.xmartlabs.template.ui.ValidatableFragment;
 import com.xmartlabs.template.ui.WelcomeActivity;
 import com.xmartlabs.template.ui.WelcomeFragment;
 import com.xmartlabs.template.ui.repo.list.RepoListAdapter;

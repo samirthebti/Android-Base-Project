@@ -22,10 +22,6 @@ public class RepoController extends ServiceController {
   @Inject
   RepoService repoService;
 
-  public RepoController() {
-    BaseProjectApplication.getContext().inject(this);
-  }
-
   @NonNull
   public Observable<List<Repo>> getPublicRepositoriesFilteredBy(@Nullable String filter) {
     return repoService.repositories()

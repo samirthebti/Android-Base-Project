@@ -2,6 +2,7 @@ package com.xmartlabs.template;
 
 import com.xmartlabs.template.controller.AuthController;
 import com.xmartlabs.template.controller.Controller;
+import com.xmartlabs.template.controller.RepoController;
 import com.xmartlabs.template.controller.ServiceController;
 import com.xmartlabs.template.controller.SessionController;
 import com.xmartlabs.template.helper.DatabaseHelper;

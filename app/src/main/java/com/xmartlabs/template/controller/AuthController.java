@@ -2,7 +2,6 @@ package com.xmartlabs.template.controller;
 
 import android.support.annotation.NonNull;
 
-import com.xmartlabs.template.BaseProjectApplication;
 import com.xmartlabs.template.model.AuthResponse;
 import com.xmartlabs.template.model.LoginRequest;
 import com.xmartlabs.template.model.Session;

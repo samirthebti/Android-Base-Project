@@ -3,7 +3,6 @@ package com.xmartlabs.template.controller;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.xmartlabs.template.BaseProjectApplication;
 import com.xmartlabs.template.model.Repo;
 import com.xmartlabs.template.service.RepoService;
 

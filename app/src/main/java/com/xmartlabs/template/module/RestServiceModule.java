@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.google.gson.Gson;
 import com.xmartlabs.template.R;
+import com.xmartlabs.template.model.AuthResponse;
 import com.xmartlabs.template.service.AuthService;
 import com.xmartlabs.template.service.RepoService;
 
@@ -16,6 +17,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Single;
 
 /**
  * Created by santiago on 31/08/15.
@@ -49,8 +51,8 @@ public class RestServiceModule {
 
   @Provides
   @Singleton
-  public AuthService provideAuthService(Retrofit retrofit) {
-    return retrofit.create(AuthService.class);
+  public AuthService provideAuthService(@SuppressWarnings("UnusedParameters") Retrofit retrofit) {
+    return loginRequest -> Single.just(new AuthResponse()); // As we don't have real login.
   }
 
   @Provides

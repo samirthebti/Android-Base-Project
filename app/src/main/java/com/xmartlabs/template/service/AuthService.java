@@ -11,6 +11,6 @@ import rx.Single;
  * Created by santiago on 31/08/15.
  */
 public interface AuthService {
-  @POST("login")
+  @POST("sample_login")
   Single<AuthResponse> login(@Body LoginRequest loginRequest);
 }

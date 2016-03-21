@@ -5,14 +5,7 @@ import android.app.Application;
 import com.crashlytics.android.Crashlytics;
 import com.crashlytics.android.core.CrashlyticsCore;
 import com.xmartlabs.template.module.AndroidModule;
-import com.xmartlabs.template.module.ControllerModule;
-import com.xmartlabs.template.module.DatabaseModule;
 import com.xmartlabs.template.module.GeneralErrorHelperModule;
-import com.xmartlabs.template.module.GsonModule;
-import com.xmartlabs.template.module.OkHttpModule;
-import com.xmartlabs.template.module.PicassoModule;
-import com.xmartlabs.template.module.ReceiverModule;
-import com.xmartlabs.template.module.RestServiceModule;
 
 import io.fabric.sdk.android.Fabric;
 import timber.log.Timber;
@@ -26,7 +19,6 @@ public class BaseProjectApplication extends Application {
   private BulletApplicationComponent bullet;
 
   public BaseProjectApplication() {
-    super();
     instance = this;
   }
 
@@ -51,14 +43,7 @@ public class BaseProjectApplication extends Application {
 
     ApplicationComponent component = DaggerApplicationComponent.builder()
         .androidModule(new AndroidModule(this))
-        .controllerModule(new ControllerModule())
-        .databaseModule(new DatabaseModule())
         .generalErrorHelperModule(new GeneralErrorHelperModule())
-        .gsonModule(new GsonModule())
-        .okHttpModule(new OkHttpModule())
-        .picassoModule(new PicassoModule())
-        .receiverModule(new ReceiverModule())
-        .restServiceModule(new RestServiceModule())
         .build();
     bullet = new BulletApplicationComponent(component);
   }

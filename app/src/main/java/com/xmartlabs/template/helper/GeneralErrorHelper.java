@@ -1,17 +1,20 @@
 package com.xmartlabs.template.helper;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 
 import com.annimon.stream.Objects;
 import com.crashlytics.android.Crashlytics;
 import com.xmartlabs.template.BaseProjectApplication;
 import com.xmartlabs.template.controller.SessionController;
+import com.xmartlabs.template.ui.Henson;
 
 import java.io.IOException;
 
 import javax.inject.Inject;
 
+import lombok.Getter;
 import retrofit2.Response;
 import retrofit2.adapter.rxjava.HttpException;
 import rx.functions.Action1;
@@ -37,7 +40,8 @@ public class GeneralErrorHelper {
     BaseProjectApplication.getContext().inject(this);
   }
 
-  private final Action1<Throwable> generalErrorAction = t -> {
+  @Getter
+  final Action1<Throwable> generalErrorAction = t -> {
     if (t instanceof HttpException) {
       HttpException httpException = (HttpException) t;
       Response<?> response = httpException.response();
@@ -64,20 +68,23 @@ public class GeneralErrorHelper {
 
   private void logOut() {
     finishLogOut();
-    // TODO: take the user to an activity
+
+    Intent intent = Henson.with(applicationContext).gotoWelcomeActivity().build();
+    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+    applicationContext.startActivity(intent);
   }
 
-  public Action1<Throwable> getGeneralErrorAction() {
-    return generalErrorAction;
-  }
-
-  // If this is not done after log out, the log out sessionInterceptor could not catch the session token.
+  /**
+   * Triggers the actions that need to be done after logging out.
+   *
+   * If this is not done after log out, the log out sessionInterceptor could not catch the session token.
+   */
   public void finishLogOut() {
     dismissNotifications();
     // TODO: remove data from database too
   }
 
   public void dismissNotifications() {
-    // TODO
+
   }
 }

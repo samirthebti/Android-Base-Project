@@ -2,10 +2,12 @@ package com.xmartlabs.template.ui;
 
 import android.support.annotation.NonNull;
 
+import com.f2prateek.dart.HensonNavigable;
+
 /**
  * Created by santiago on 10/09/15.
  */
-@com.f2prateek.dart.Henson
+@HensonNavigable
 public class SettingsActivity extends SingleFragmentWithToolbarActivity {
   @NonNull
   @Override

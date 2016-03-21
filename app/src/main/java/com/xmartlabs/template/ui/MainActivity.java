@@ -155,7 +155,7 @@ public class MainActivity extends BaseAppCompatActivity {
               .beginTransaction()
               .replace(R.id.fragment_container, fragmentWithDrawer)
               .commit();
-          toolbar.setTitle(fragmentWithDrawer.getTitle());
+          setTitle(fragmentWithDrawer.getTitle());
         }
 
         drawerAdapter.selectItemIfSelectable(drawerItem);

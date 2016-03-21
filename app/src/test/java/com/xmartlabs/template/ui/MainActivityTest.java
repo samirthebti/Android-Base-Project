@@ -14,6 +14,9 @@ import static org.hamcrest.CoreMatchers.containsString;
 
 /**
  * Created by santiago on 02/02/16.
+ *
+ * If you want to test Android views and related, and using always the latest SDK and libraries' versions, the tests
+ * with simulator will tend to break. So prefer using instrumental testing meanwhile.
  */
 // Set the package name: https://github.com/robolectric/robolectric/issues/2110
 @Config(constants = BuildConfig.class, packageName = "com.xmartlabs.template", sdk = 21)
@@ -25,6 +28,6 @@ public class MainActivityTest {
   @Test
   public void checkTitle() {
     MainActivity activity = Robolectric.setupActivity(MainActivity.class);
-    Assert.assertThat(activity.getTitle().toString(), containsString("Base project"));
+    Assert.assertThat(activity.getTitle().toString(), containsString("Home"));
   }
 }

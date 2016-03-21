@@ -21,15 +21,14 @@ import static org.hamcrest.CoreMatchers.containsString;
 /**
  * Created by santiago on 03/02/16.
  */
-@SuppressWarnings("DefaultFileTemplate")
 @RunWith(AndroidJUnit4.class)
 public class MainActivityInstrumentationTest {
   @Rule
   public ActivityTestRule<MainActivity> activityTestRule = new ActivityTestRule<>(MainActivity.class);
 
   @Test
-  public void checkTitle() {
-    onView(withId(R.id.toolbar)).check(matches(withToolbarTitle(containsString("Base project"))));
+  public void checkTitleWhenStartingApp() {
+    onView(withId(R.id.toolbar)).check(matches(withToolbarTitle(containsString("Home"))));
   }
 
   private static Matcher<Object> withToolbarTitle(final Matcher<String> textMatcher) {

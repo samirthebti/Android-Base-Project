@@ -1,13 +1,10 @@
 package com.xmartlabs.template.ui.repo.list;
 
-import android.support.test.espresso.NoMatchingViewException;
-import android.support.test.espresso.ViewAssertion;
+import android.os.SystemClock;
 import android.support.test.espresso.contrib.DrawerActions;
-import android.support.test.espresso.matcher.ViewMatchers;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.xmartlabs.template.R;
 import com.xmartlabs.template.ui.MainActivity;
@@ -22,6 +19,7 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.matcher.ViewMatchers.assertThat;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.greaterThan;
 import static org.hamcrest.Matchers.is;
 
 /**
@@ -40,9 +38,10 @@ public class RepoListInstrumentationTest {
 
   @Test
   public void checkRepoListNotEmpty() {
+    SystemClock.sleep(4000); // TODO: should use a fake
     onView(withId(R.id.repos_recyclerView)).check((view, noViewFoundException) -> {
       RecyclerView recyclerView = (RecyclerView) view;
-      assertThat(recyclerView.getAdapter().getItemCount(), is(0));
+      assertThat(recyclerView.getAdapter().getItemCount(), greaterThan(0));
     });
   }
 }

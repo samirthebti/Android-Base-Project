@@ -130,7 +130,7 @@ dependencies {
     apt 'com.f2prateek.dart:dart-processor:2.0.0'
     apt 'com.f2prateek.dart:henson-processor:2.0.0'
     apt 'com.github.tbroyer.bullet:bullet-compiler:e5044b53df'
-    provided 'com.google.dagger:dagger-compiler:2.0.2'
+    apt 'com.google.dagger:dagger-compiler:2.0.2'
     apt 'com.hannesdorfmann.fragmentargs:processor:3.0.2'
     //apt 'net.ltgt.dagger:bullet-compiler:1.0-SNAPSHOT' // Loaded from JitPack
     apt 'org.parceler:parceler:1.0.4'

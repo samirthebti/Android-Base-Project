@@ -17,7 +17,7 @@ import com.xmartlabs.template.ui.BaseFragment;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 
 @FragmentWithArgs
 public class RepoDetailFragment extends BaseFragment {
@@ -27,7 +27,7 @@ public class RepoDetailFragment extends BaseFragment {
   @Inject
   RepoService service;
 
-  @Bind(R.id.name_textView)
+  @BindView(R.id.name_textView)
   TextView nameTextView;
 
   @NonNull

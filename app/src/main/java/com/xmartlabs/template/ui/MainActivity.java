@@ -26,24 +26,26 @@ import com.xmartlabs.template.ui.repo.list.RepoListFragmentBuilder;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import butterknife.Unbinder;
 
 public class MainActivity extends BaseAppCompatActivity {
+  private Unbinder unbinder;
   @Nullable
   @InjectExtra
   DrawerItem initialDrawerItem;
 
-  @Bind(R.id.toolbar)
+  @BindView(R.id.toolbar)
   Toolbar toolbar;
-  @Bind(R.id.drawer)
+  @BindView(R.id.drawer)
   View drawer;
-  @Bind(R.id.website_textView)
+  @BindView(R.id.website_textView)
   TextView websiteTextView;
-  @Bind(R.id.drawer_recyclerView)
+  @BindView(R.id.drawer_recyclerView)
   RecyclerView drawerRecyclerView;
-  @Bind(R.id.activity_main_layout)
+  @BindView(R.id.activity_main_layout)
   DrawerLayout drawerLayout;
 
   @Inject
@@ -57,7 +59,7 @@ public class MainActivity extends BaseAppCompatActivity {
     super.onCreate(savedInstanceState);
 
     setContentView(R.layout.activity_main);
-    ButterKnife.bind(this);
+    unbinder = ButterKnife.bind(this);
 
     setSupportActionBar(toolbar);
 
@@ -99,6 +101,12 @@ public class MainActivity extends BaseAppCompatActivity {
     MenuInflater inflater = getMenuInflater();
     inflater.inflate(R.menu.menu_main_activity, menu);
     return true;
+  }
+
+  @Override
+  protected void onDestroy() {
+    super.onDestroy();
+    unbinder.unbind();
   }
 
   @Override

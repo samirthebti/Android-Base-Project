@@ -17,11 +17,13 @@ import com.xmartlabs.template.BaseProjectApplication;
 import com.xmartlabs.template.R;
 
 import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by santiago on 15/09/15.
  */
 public abstract class BaseFragment extends RxFragment {
+  private Unbinder unbinder;
   @Nullable
   private ProgressDialog progressDialog;
 
@@ -41,7 +43,7 @@ public abstract class BaseFragment extends RxFragment {
   @Override
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
     View view = inflater.inflate(getLayoutResId(), container, false);
-    ButterKnife.bind(this, view);
+    unbinder = ButterKnife.bind(this, view);
 
     return view;
   }
@@ -66,7 +68,7 @@ public abstract class BaseFragment extends RxFragment {
   @Override
   public void onDestroyView() {
     super.onDestroyView();
-    ButterKnife.unbind(this);
+    unbinder.unbind();
   }
 
   protected void showAlertError(int stringResId) {

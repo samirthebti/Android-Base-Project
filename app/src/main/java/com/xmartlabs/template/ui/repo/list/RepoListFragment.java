@@ -22,7 +22,7 @@ import com.xmartlabs.template.ui.Henson;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.OnTextChanged;
 import timber.log.Timber;
 
@@ -31,9 +31,9 @@ public class RepoListFragment extends FragmentWithDrawer {
   @Inject
   RepoController repoController;
 
-  @Bind(R.id.filter_editText)
+  @BindView(R.id.filter_editText)
   EditText filterEditText;
-  @Bind(R.id.repos_recyclerView)
+  @BindView(R.id.repos_recyclerView)
   RecyclerView reposRecyclerView;
 
   private RepoListAdapter reposAdapter;

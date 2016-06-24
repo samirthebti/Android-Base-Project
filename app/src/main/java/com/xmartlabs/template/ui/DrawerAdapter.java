@@ -15,7 +15,7 @@ import com.annimon.stream.Objects;
 import java.util.Arrays;
 import java.util.List;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -141,7 +141,7 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.DrawerItem
   }
 
   static class DrawerAboveItemViewHolder extends DrawerBelowItemViewHolder {
-    @Bind(android.R.id.icon)
+    @BindView(android.R.id.icon)
     ImageView imageView;
 
     DrawerAboveItemViewHolder(@NonNull View view) {
@@ -156,7 +156,7 @@ public class DrawerAdapter extends RecyclerView.Adapter<DrawerAdapter.DrawerItem
   }
 
   static class DrawerBelowItemViewHolder extends DrawerItemViewHolder {
-    @Bind(android.R.id.text1)
+    @BindView(android.R.id.text1)
     TextView textView;
 
     DrawerBelowItemViewHolder(@NonNull View view) {

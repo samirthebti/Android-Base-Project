@@ -20,7 +20,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -95,11 +95,11 @@ public class RepoListAdapter extends RecyclerView.Adapter<RepoListAdapter.RepoIt
   }
 
   public static class RepoItemViewHolder extends RecyclerView.ViewHolder {
-    @Bind(R.id.name_textView)
+    @BindView(R.id.name_textView)
     TextView nameTextView;
-    @Bind(R.id.author_textView)
+    @BindView(R.id.author_textView)
     TextView authorTextView;
-    @Bind(R.id.imageView)
+    @BindView(R.id.imageView)
     ImageView imageView;
 
     Repo repo;
